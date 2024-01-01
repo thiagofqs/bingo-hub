@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    padding: 30px;
+}
+
+.mainTitle,
+.mainSubtitle,
+.mainText {
+    text-align: center;
+}
+
+.result {
+    display: block;
+    margin: auto;
+    background-color: #dee2e6;
+    width: max-content;
+    margin-top: 30px;
+    padding: 10px 100px;
+    border-radius: 30px;
+}
+
+.result__text {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.bingoHub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 30px 0;
+}
+
+.letterBg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+}
+
+.numberBg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 32px;
+    border-radius: 10px;
+    background-color: #dee2e6;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.number {
+    color: #000;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.numberBg--drawed {
+    background-color: #20c997;
+    transition: 0.5s;
+}
+
+.letterHub {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.numbersHub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bingoLetter {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.groupBtnsOptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.inputSelect {
+    padding: 5px 10px;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn__large {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+
+.groupBtnsPlayBingo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.btn--lightGray {
+    background-color: #dee2e6;
+}
+
+.btn--gray {
+    background-color: #adb5bd;
+}
+
+.btn--black {
+    background-color: #000;
+    color: #fff;
+}
+
+.letterBg--redBg {
+    background-color: #dc3545;
+}
+
+.letterBg--orangeBg {
+    background-color: #fd7e14;
+}
+
+.letterBg--greenBg {
+    background-color: #198754;
+}
+
+.letterBg--blueBg {
+    background-color: #0d6efd;
+}
+
+.letterBg--purpleBg {
+    background-color: #6f42c1;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}

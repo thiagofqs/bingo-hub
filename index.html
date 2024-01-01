@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BingoHub - Sorteador de Bingo</title>
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+        />
+    </head>
+    <body>
+        <main>
+            <h1 class="mainTitle">BingoHub</h1>
+            <h2 class="mainSubtitle">Sorteador de Bingo</h2>
+            <p class="mainText">
+                Sorteio de bingo com <span id="gamemodeNumber">X</span> números.
+            </p>
+            <div class="groupBtnsOptions">
+                <div>
+                    <label for="selectGamemode">Modo de jogo:</label>
+                    <select
+                        name="selectGamemode"
+                        id="selectGamemode"
+                        class="inputSelect"
+                    >
+                        <option value="75" selected>75 bolas</option>
+                        <option value="80">80 bolas</option>
+                        <option value="85">85 bolas</option>
+                        <option value="90">90 bolas</option>
+                        <option value="95">95 bolas</option>
+                        <option value="100">100 bolas</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="voiceDraw">Sorteio com voz:</label>
+                    <input
+                        type="checkbox"
+                        name="voiceDraw"
+                        id="voiceDraw"
+                        checked
+                    />
+                </div>
+            </div>
+            <div class="result">
+                <p class="result__text" id="resultText">INICIE O SORTEIO</p>
+            </div>
+            <div class="bingoHub">
+                <div class="letterHub">
+                    <div class="letterBg letterBg--redBg">
+                        <p class="bingoLetter">B</p>
+                    </div>
+                    <div class="numbersHub"></div>
+                </div>
+                <div class="letterHub">
+                    <div class="letterBg letterBg--orangeBg">
+                        <p class="bingoLetter">I</p>
+                    </div>
+                    <div class="numbersHub"></div>
+                </div>
+                <div class="letterHub">
+                    <div class="letterBg letterBg--greenBg">
+                        <p class="bingoLetter">N</p>
+                    </div>
+                    <div class="numbersHub"></div>
+                </div>
+                <div class="letterHub">
+                    <div class="letterBg letterBg--blueBg">
+                        <p class="bingoLetter">G</p>
+                    </div>
+                    <div class="numbersHub"></div>
+                </div>
+                <div class="letterHub">
+                    <div class="letterBg letterBg--purpleBg">
+                        <p class="bingoLetter">O</p>
+                    </div>
+                    <div class="numbersHub"></div>
+                </div>
+            </div>
+            <div class="groupBtnsPlayBingo">
+                <button class="btn btn__large btn--black" id="drawBtn">
+                    <i class="bi bi-dice-5"></i>Sortear
+                </button>
+                <button class="btn btn__large btn--gray" id="resetBtn">
+                    <i class="bi bi-arrow-counterclockwise"></i>Reiniciar
+                </button>
+            </div>
+        </main>
+        <footer>
+            <p class="footerText">
+                Feito com ❤️ por
+                <a href="https://github.com/thiagofqs" target="_blank"
+                    >Thiago Freitas</a
+                >
+            </p>
+            <p class="footerText">Versão 1.0.0</p>
+        </footer>
+        <script type="module" src="assets/js/script.js"></script>
+    </body>
+</html>
