@@ -33,61 +33,87 @@
                         <option value="100">100 bolas</option>
                     </select>
                 </div>
-                <div>
-                    <label for="voiceDraw">Sorteio com voz:</label>
-                    <input
-                        type="checkbox"
-                        name="voiceDraw"
-                        id="voiceDraw"
-                        checked
-                    />
+                <button class="btn btn--black" id="openConfigModal" aria-label="Abrir configurações">
+                    <i class="bi bi-gear" role="img" aria-label="Ícone de configurações"></i> Configurações
+                </button>
+                <div class="modal" id="configModal">
+                    <div class="modalContent">
+                        <div class="modalHeader">
+                            <p class="modalTitle">Configurações</p>
+                            <button class="btn btn__large btn--inv" id="closeConfigModal" aria-label="Fechar configurações">
+                                <i class="bi bi-x-lg" role="img" aria-label="Ícone de fechar"></i>
+                            </button>
+                        </div>
+                        <div class="modalBody">
+                            <div>
+                                <label for="roulleteAudio">Som de roleta:</label>
+                                <input
+                                    type="checkbox"
+                                    name="roulleteAudio"
+                                    id="roulleteAudio"
+                                    checked
+                                />
+                            </div>
+                            <div>
+                                <label for="drawVoice">Ler números com voz:</label>
+                                <input
+                                    type="checkbox"
+                                    name="drawVoice"
+                                    id="drawVoice"
+                                    checked
+                                />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="result">
                 <p class="result__text" id="resultText">INICIE O SORTEIO</p>
             </div>
-            <div class="bingoHub">
-                <div class="letterHub">
-                    <div class="letterBg letterBg--redBg">
-                        <p class="bingoLetter">B</p>
+            <div class="bingo">
+                <div class="bingoHub">
+                    <div class="letterHub">
+                        <div class="letterBg letterBg--redBg">
+                            <p class="bingoLetter">B</p>
+                        </div>
+                        <div class="numbersHub"></div>
                     </div>
-                    <div class="numbersHub"></div>
-                </div>
-                <div class="letterHub">
-                    <div class="letterBg letterBg--orangeBg">
-                        <p class="bingoLetter">I</p>
+                    <div class="letterHub">
+                        <div class="letterBg letterBg--orangeBg">
+                            <p class="bingoLetter">I</p>
+                        </div>
+                        <div class="numbersHub"></div>
                     </div>
-                    <div class="numbersHub"></div>
-                </div>
-                <div class="letterHub">
-                    <div class="letterBg letterBg--greenBg">
-                        <p class="bingoLetter">N</p>
+                    <div class="letterHub">
+                        <div class="letterBg letterBg--greenBg">
+                            <p class="bingoLetter">N</p>
+                        </div>
+                        <div class="numbersHub"></div>
                     </div>
-                    <div class="numbersHub"></div>
-                </div>
-                <div class="letterHub">
-                    <div class="letterBg letterBg--blueBg">
-                        <p class="bingoLetter">G</p>
+                    <div class="letterHub">
+                        <div class="letterBg letterBg--blueBg">
+                            <p class="bingoLetter">G</p>
+                        </div>
+                        <div class="numbersHub"></div>
                     </div>
-                    <div class="numbersHub"></div>
-                </div>
-                <div class="letterHub">
-                    <div class="letterBg letterBg--purpleBg">
-                        <p class="bingoLetter">O</p>
+                    <div class="letterHub">
+                        <div class="letterBg letterBg--purpleBg">
+                            <p class="bingoLetter">O</p>
+                        </div>
+                        <div class="numbersHub"></div>
                     </div>
-                    <div class="numbersHub"></div>
                 </div>
-            </div>
-            <div class="groupBtnsPlayBingo">
-                <button class="btn btn__large btn--black" id="drawBtn">
-                    <i class="bi bi-dice-5"></i>Sortear
-                </button>
-                <button class="btn btn__large btn--gray" id="resetBtn">
-                    <i class="bi bi-arrow-counterclockwise"></i>Reiniciar
-                </button>
             </div>
         </main>
         <footer>
+            <div class="groupBtnsPlayBingo">
+                <button class="btn btn__large btn--black" id="drawBtn">
+                    <i class="bi bi-dice-5" role="img" aria-label="Ícone de um dado"></i>Sortear
+                </button>
+                <button class="btn btn__large btn--gray" id="resetBtn">
+                    <i class="bi bi-arrow-counterclockwise" role="img" aria-label="Ícone de reinício"></i>Reiniciar
+                </button>
+            </div>
             <p class="footerText">
                 Feito com ❤️ por
                 <a href="https://github.com/thiagofqs" target="_blank"

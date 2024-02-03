@@ -1,8 +1,11 @@
+import "./modal.js";
+
 const inputSelectGamemode = document.querySelector("#selectGamemode");
 const resetButton = document.querySelector("#resetBtn");
 const drawButton = document.querySelector("#drawBtn");
 const gamemodeNumber = document.querySelector("#gamemodeNumber");
-const drawVoice = document.querySelector("#voiceDraw");
+const drawVoice = document.querySelector("#drawVoice");
+const roulleteAudio = document.querySelector("#roulleteAudio");
 const numbersHub = document.querySelectorAll(".numbersHub");
 const resultText = document.querySelector("#resultText");
 
@@ -19,6 +22,7 @@ const rouletteAudio = new Audio("assets/audio/somRoleta.wav");
 let maxNumberOfBalls = null;
 let listOfDrawnNumbers = [];
 let activateBallReading = true;
+let activateRouletteAudio = true;
 
 const gamemodes = {
     75: 75,
@@ -62,8 +66,7 @@ function drawNumber() {
     drawButton.disabled = true;
     const numbers = document.querySelectorAll(".numberBg");
     if (listOfDrawnNumbers.length < maxNumberOfBalls) {
-        rouletteAudio.play();
-        rouletteAudio.onended = () => {
+        const onEndCallback = () => {
             let number = null;
             do {
                 number = Math.floor(Math.random() * maxNumberOfBalls) + 1;
@@ -77,6 +80,12 @@ function drawNumber() {
             drawButton.disabled =
                 listOfDrawnNumbers.length === maxNumberOfBalls;
         };
+        if (activateRouletteAudio) {
+            rouletteAudio.onended = onEndCallback;
+            rouletteAudio.play();
+            return;
+        }
+        onEndCallback();
         return;
     }
     alert("Não existem mais números para serem sorteados!");
@@ -96,6 +105,10 @@ function checkBallReading() {
     activateBallReading = drawVoice.checked;
 }
 
+function checkRouletteAudio() {
+    activateRouletteAudio = roulleteAudio.checked;
+}
+
 function resetBingo() {
     drawButton.disabled = true;
     listOfDrawnNumbers = [];
@@ -103,6 +116,7 @@ function resetBingo() {
         hub.innerHTML = "";
     }
     checkBallReading();
+    checkRouletteAudio();
     getGamemode();
     drawButton.disabled = false;
 }
@@ -110,4 +124,5 @@ function resetBingo() {
 resetButton.addEventListener("click", resetBingo);
 drawButton.addEventListener("click", drawNumber);
 drawVoice.addEventListener("change", checkBallReading);
+roulleteAudio.addEventListener("change", checkRouletteAudio);
 resetBingo();
