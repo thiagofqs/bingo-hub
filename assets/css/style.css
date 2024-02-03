@@ -126,6 +126,11 @@ body {
     opacity: 0.7;
 }
 
+.btn:disabled {
+    cursor: auto;
+    opacity: 0.4;
+}
+
 .groupBtnsPlayBingo {
     display: flex;
     justify-content: center;

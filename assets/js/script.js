@@ -14,7 +14,7 @@ const utterance = new SpeechSynthesisUtterance();
 utterance.lang = "pt-BR";
 utterance.voice = speakingVoice;
 
-const rouletteAudio = new Audio("assets/audio/Som de Roleta.wav");
+const rouletteAudio = new Audio("assets/audio/somRoleta.wav");
 
 let maxNumberOfBalls = null;
 let listOfDrawnNumbers = [];
@@ -58,14 +58,11 @@ function insertNumbersOnHub() {
     }
 }
 
-function playAudioRoulette() {
-    rouletteAudio.play();
-}
-
 function drawNumber() {
+    drawButton.disabled = true;
     const numbers = document.querySelectorAll(".numberBg");
     if (listOfDrawnNumbers.length < maxNumberOfBalls) {
-        playAudioRoulette();
+        rouletteAudio.play();
         rouletteAudio.onended = () => {
             let number = null;
             do {
@@ -77,8 +74,8 @@ function drawNumber() {
             resultText.textContent = `LETRA ${letter}, NÚMERO ${number}`;
             talkDrawnBalls(letter, number);
             numberElement.classList.add("numberBg--drawed");
-            if (listOfDrawnNumbers.length === maxNumberOfBalls)
-                drawButton.disabled = true;
+            drawButton.disabled =
+                listOfDrawnNumbers.length === maxNumberOfBalls;
         };
         return;
     }
@@ -96,22 +93,21 @@ function getGamemode() {
 }
 
 function checkBallReading() {
-    drawVoice.checked
-        ? (activateBallReading = true)
-        : (activateBallReading = false);
+    activateBallReading = drawVoice.checked;
 }
 
 function resetBingo() {
+    drawButton.disabled = true;
+    listOfDrawnNumbers = [];
     for (const hub of numbersHub) {
         hub.innerHTML = "";
     }
     checkBallReading();
     getGamemode();
-    listOfDrawnNumbers = [];
     drawButton.disabled = false;
 }
 
-resetBingo();
 resetButton.addEventListener("click", resetBingo);
 drawButton.addEventListener("click", drawNumber);
 drawVoice.addEventListener("change", checkBallReading);
+resetBingo();
